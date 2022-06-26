@@ -1,0 +1,118 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+strong:hover {
+  color: #fff;
+  font-size: 36px;
+}
+
+.app-card {
+  background: linear-gradient(#92b4ec, #ffffff);
+  border: solid #92b4ec;
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+.five-day-card {
+  background: linear-gradient(#ffe69a, #ffffff);
+  border: solid #ffc003;
+  --bs-card-spacer-y: 0;
+}
+
+.subhead {
+  opacity: 75%;
+  padding-bottom: 25px;
+}
+
+.form-control {
+  display: inline;
+  width: 50%;
+  font-size: 20px;
+}
+
+.btn {
+  vertical-align: 0%;
+  background: #ffe69a;
+  color: #92b4ec;
+  border: solid #ffc003;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #ffc003;
+  border: solid #fff;
+}
+
+.current-location-search {
+  margin-top: 12px;
+}
+
+.current-button-description {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.current-day-time {
+  opacity: 60%;
+}
+
+.current-conditions {
+  margin-top: 50px;
+}
+
+.current-icon {
+  font-size: 70px;
+}
+
+.current-temp-value {
+  font-size: 62px;
+  font-weight: 250;
+  line-height: 1;
+  margin-left: 20px;
+}
+
+.units {
+  font-size: 24px;
+  position: relative;
+  top: -32px;
+  left: -15px;
+}
+
+.motivation-text {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  opacity: 80%;
+  font-size: large;
+  background: rgb(255, 230, 154);
+  border: solid #ffc003;
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.current-stats {
+  line-height: 40px;
+  font-size: 18px;
+}
+
+.five-day {
+  text-align: center;
+  border: solid #ffc003;
+  border-radius: 12px;
+  line-height: 25px;
+}
+
+.shift-right {
+  position: relative;
+  left: 0px;
+}
