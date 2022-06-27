@@ -16,11 +16,14 @@ strong:hover {
   font-size: 36px;
 }
 
+.app-wrapper {
+  margin: 30px auto;
+  max-width: 700px;
+}
+
 .app-card {
   background: linear-gradient(#92b4ec, #ffffff);
   border: solid #92b4ec;
-  margin: 30px auto;
-  max-width: 700px;
 }
 
 .five-day-card {
@@ -79,14 +82,13 @@ strong:hover {
   font-size: 62px;
   font-weight: 250;
   line-height: 1;
-  margin-left: 20px;
+  margin-left: 6px;
 }
 
 .units {
   font-size: 24px;
   position: relative;
   top: -32px;
-  left: -15px;
 }
 
 .motivation-text {

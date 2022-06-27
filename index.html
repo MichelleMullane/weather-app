@@ -29,153 +29,155 @@
 
   <body>
     <div class="container">
-      <div class="card app-card">
-        <div class="card-body">
-          <h1>Daily Motivation Weather App</h1>
+      <div class="app-wrapper">
+        <div class="card app-card">
+          <div class="card-body">
+            <h1>Daily Motivation Weather App</h1>
 
-          <div class="subhead">
-            Getting you in the 🧠mindset🧘‍♀️ to smash your day, no matter the
-            weather.
-          </div>
+            <div class="subhead">
+              Getting you in the 🧠mindset🧘‍♀️ to smash your day, no matter the
+              weather.
+            </div>
 
-          <form>
-            <input
-              type="text"
-              class="form-control search-bar shadow"
-              id="location-input"
-              placeholder="Enter a city name"
-              autocomplete="off"
-              autofocus
-            />
-            <button
-              type="submit"
-              id="search-location"
-              class="btn btn-primary shadow"
-            >
-              ☜ Search City
-            </button>
-          </form>
-          <div class="current-location-search">
-            <span class="current-button-description"
-              >Check out the current weather where you are:</span
-            >
-            <button
-              type="submit"
-              id="current-location"
-              class="btn btn-primary shadow"
-            >
-              ☞ Your Location
-            </button>
-          </div>
+            <form>
+              <input
+                type="text"
+                class="form-control search-bar shadow"
+                id="location-input"
+                placeholder="Enter a city name"
+                autocomplete="off"
+                autofocus
+              />
+              <button
+                type="submit"
+                id="search-location"
+                class="btn btn-primary shadow"
+              >
+                ☜ Search City
+              </button>
+            </form>
+            <div class="current-location-search">
+              <span class="current-button-description"
+                >Check out the current weather where you are:</span
+              >
+              <button
+                type="submit"
+                id="current-location"
+                class="btn btn-primary shadow"
+              >
+                ☞ Your Location
+              </button>
+            </div>
 
-          <h2>
-            Current Weather in
-            <strong id="location"> ...enter location above </strong>
-          </h2>
+            <h2>
+              Current Weather in
+              <strong id="location"> ...enter location above </strong>
+            </h2>
 
-          <div class="current-day-time"></div>
+            <div class="current-day-time"></div>
 
-          <div class="row current-conditions">
-            <div class="col">
-              <div class="current-temp">
-                <i class="fa-solid fa-cloud-sun current-icon"></i>
-                <span class="current-temp-value" id="temp-value"> </span>
-                <span class="units" id="units-display">°F</span>
-                <span class="toggle-units"></span>
-                <a href="" id="select-fahrenheit">°F</a> |
-                <a href="" id="select-celsius">°C</a>
+            <div class="row current-conditions">
+              <div class="col">
+                <div class="current-temp">
+                  <i class="fa-solid fa-cloud-sun current-icon"></i>
+                  <span class="current-temp-value" id="temp-value"></span
+                  ><span class="units" id="units-display">°F</span>
+                  <span class="toggle-units"></span>
+                  <a href="" id="select-fahrenheit">°F</a> |
+                  <a href="" id="select-celsius">°C</a>
+                </div>
+
+                <div class="daily-temp-cloudiness">
+                  <span id="current-weather-description"></span>
+                  <br />
+                  H: <span id="high-temp-value"> </span>°F | L:
+                  <span id="low-temp-value"> </span>°F
+                </div>
+
+                <div class="motivation-text">
+                  <strong> Today's Mantra☕️: </strong>
+                  Don't let those clouds get in the way. Go crush your day,
+                  queen! 👸
+                </div>
               </div>
 
-              <div class="daily-temp-cloudiness">
-                <span id="current-weather-description"></span>
+              <div class="col current-stats">
+                <i class="fa-solid fa-droplet"></i>
+                Humidity: <span id="humidity-value"></span>%
                 <br />
-                H: <span id="high-temp-value"> </span>°F | L:
-                <span id="low-temp-value"> </span>°F
-              </div>
-
-              <div class="motivation-text">
-                <strong> Today's Mantra☕️: </strong>
-                Don't let those clouds get in the way. Go crush your day, queen!
-                👸
+                <i class="fa-solid fa-temperature-half"></i>
+                Feels like: <span id="feels-like-value"></span>°F
+                <br />
+                <i class="fa-solid fa-wind"></i>
+                Wind speed: <span id="wind-speed-value"></span>m/s
+                <br />
+                <i class="fa-solid fa-angles-up"></i>
+                Sunrise: <span id="sunrise-time"></span>
+                <br />
+                <i class="fa-solid fa-angles-down"></i>
+                Sunset: <span id="sunset-time"></span>
               </div>
             </div>
 
-            <div class="col current-stats">
-              <i class="fa-solid fa-droplet"></i>
-              Humidity: <span id="humidity-value"></span>%
-              <br />
-              <i class="fa-solid fa-temperature-half"></i>
-              Feels like: <span id="feels-like-value"></span>°F
-              <br />
-              <i class="fa-solid fa-wind"></i>
-              Wind speed: <span id="wind-speed-value"></span>m/s
-              <br />
-              <i class="fa-solid fa-angles-up"></i>
-              Sunrise: <span id="sunrise-time"></span>
-              <br />
-              <i class="fa-solid fa-angles-down"></i>
-              Sunset: <span id="sunset-time"></span>
-            </div>
-          </div>
+            <div class="card five-day-card">
+              <div class="card-body">
+                <h3>Your 5 Day Forecast</h3>
 
-          <div class="card five-day-card">
-            <div class="card-body">
-              <h3>Your 5 Day Forecast</h3>
+                <div class="row">
+                  <div class="col five-day">
+                    Saturday 6/11
+                    <br />
+                    <i class="fa-solid fa-cloud-bolt"></i>
+                    60%
+                    <br />
+                    H: 74°F | L: 88°F
+                  </div>
 
-              <div class="row">
-                <div class="col five-day">
-                  Saturday 6/11
-                  <br />
-                  <i class="fa-solid fa-cloud-bolt"></i>
-                  60%
-                  <br />
-                  H: 74°F | L: 88°F
-                </div>
+                  <div class="col five-day">
+                    Sunday 6/12
+                    <br />
+                    <i class="fa-solid fa-cloud-bolt"></i>
+                    70%
+                    <br />
+                    H: 75°F | L: 90°F
+                  </div>
 
-                <div class="col five-day">
-                  Sunday 6/12
-                  <br />
-                  <i class="fa-solid fa-cloud-bolt"></i>
-                  70%
-                  <br />
-                  H: 75°F | L: 90°F
-                </div>
+                  <div class="col five-day">
+                    Monday 6/13
+                    <br />
+                    <i class="fa-solid fa-cloud-bolt"></i>
+                    50%
+                    <br />
+                    H: 76°F | L: 93°F
+                  </div>
 
-                <div class="col five-day">
-                  Monday 6/13
-                  <br />
-                  <i class="fa-solid fa-cloud-bolt"></i>
-                  50%
-                  <br />
-                  H: 76°F | L: 93°F
-                </div>
+                  <div class="col five-day">
+                    Tuesday 6/14
+                    <br />
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    <br />
+                    H: 76°F | L: 96°F
+                  </div>
 
-                <div class="col five-day">
-                  Tuesday 6/14
-                  <br />
-                  <i class="fa-solid fa-cloud-sun"></i>
-                  <br />
-                  H: 76°F | L: 96°F
-                </div>
-
-                <div class="col five-day">
-                  Wednesday 6/15
-                  <br />
-                  <i class="fa-solid fa-cloud-bolt"></i>
-                  30%
-                  <br />
-                  H: 76°F | L: 95°F
+                  <div class="col five-day">
+                    Wednesday 6/15
+                    <br />
+                    <i class="fa-solid fa-cloud-bolt"></i>
+                    30%
+                    <br />
+                    H: 76°F | L: 95°F
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <a href="https://github.com/MichelleMullane/weather-app" target="_blank"
-        >Open-source code</a
-      >
-      <span>, by Michelle Mullane</span>
+        <a href="https://github.com/MichelleMullane/weather-app" target="_blank"
+          >Open-source code</a
+        >
+        <span>, by Michelle Mullane</span>
+      </div>
     </div>
 
     <script src="index.js"></script>
