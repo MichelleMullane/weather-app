@@ -25,20 +25,17 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <link href="styles.css" rel="stylesheet" />
-
   </head>
 
   <body>
-
     <div class="container">
-  
       <div class="card app-card">
         <div class="card-body">
-
-          <h1>Daily Motivation Weather App </h1>
+          <h1>Daily Motivation Weather App</h1>
 
           <div class="subhead">
-            Getting you in the 🧠mindset🧘‍♀️ to smash your day, no matter the weather.
+            Getting you in the 🧠mindset🧘‍♀️ to smash your day, no matter the
+            weather.
           </div>
 
           <form>
@@ -50,31 +47,39 @@
               autocomplete="off"
               autofocus
             />
-            <button type="submit" id="search-location" class="btn btn-primary shadow">☜ Search City</button>
+            <button
+              type="submit"
+              id="search-location"
+              class="btn btn-primary shadow"
+            >
+              ☜ Search City
+            </button>
           </form>
           <div class="current-location-search">
-            <span class="current-button-description">Check out the current weather where you are:</span>
-            <button type="submit" id="current-location" class="btn btn-primary shadow">☞ Your Location</button>
+            <span class="current-button-description"
+              >Check out the current weather where you are:</span
+            >
+            <button
+              type="submit"
+              id="current-location"
+              class="btn btn-primary shadow"
+            >
+              ☞ Your Location
+            </button>
           </div>
 
-          <h2>Current Weather in 
-            <strong id="location">
-              ...enter location above
-            </strong>
+          <h2>
+            Current Weather in
+            <strong id="location"> ...enter location above </strong>
           </h2>
 
-          <div class="current-day-time">
-            
-          </div>
-                  
-          <div class="row current-conditions">
+          <div class="current-day-time"></div>
 
+          <div class="row current-conditions">
             <div class="col">
-              <div class="current-temp"> 
+              <div class="current-temp">
                 <i class="fa-solid fa-cloud-sun current-icon"></i>
-                <span class="current-temp-value" id="temp-value">
-                  
-                </span>  
+                <span class="current-temp-value" id="temp-value"> </span>
                 <span class="units" id="units-display">°F</span>
                 <span class="toggle-units"></span>
                 <a href="" id="select-fahrenheit">°F</a> |
@@ -84,14 +89,14 @@
               <div class="daily-temp-cloudiness">
                 <span id="current-weather-description"></span>
                 <br />
-                H: <span id="high-temp-value"> </span>°F | L: <span id="low-temp-value"> </span>°F
+                H: <span id="high-temp-value"> </span>°F | L:
+                <span id="low-temp-value"> </span>°F
               </div>
 
               <div class="motivation-text">
-                <strong> 
-                  Today's Mantra☕️:  
-                </strong>
-                Don't let those clouds get in the way.  Go crush your day, queen! 👸
+                <strong> Today's Mantra☕️: </strong>
+                Don't let those clouds get in the way. Go crush your day, queen!
+                👸
               </div>
             </div>
 
@@ -111,16 +116,13 @@
               <i class="fa-solid fa-angles-down"></i>
               Sunset: <span id="sunset-time"></span>
             </div>
-
           </div>
 
           <div class="card five-day-card">
             <div class="card-body">
-
-              <h3>Your 5 Day Forecast</h5>
+              <h3>Your 5 Day Forecast</h3>
 
               <div class="row">
-
                 <div class="col five-day">
                   Saturday 6/11
                   <br />
@@ -164,18 +166,16 @@
                   <br />
                   H: 76°F | L: 95°F
                 </div>
-
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
 
-      <a href="https://github.com/MichelleMullane/weather-app" target="_blank">Open-source code</a>
-          <span>, by Michelle Mullane</span>
-
+      <a href="https://github.com/MichelleMullane/weather-app" target="_blank"
+        >Open-source code</a
+      >
+      <span>, by Michelle Mullane</span>
     </div>
 
     <script src="index.js"></script>
