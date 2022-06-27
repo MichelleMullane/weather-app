@@ -85,6 +85,10 @@ strong:hover {
   margin-left: 6px;
 }
 
+.weather-description {
+  text-transform: capitalize;
+}
+
 .units {
   font-size: 24px;
   position: relative;
@@ -98,7 +102,7 @@ strong:hover {
   font-size: large;
   background: rgb(255, 230, 154);
   border: solid #ffc003;
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 10px;
 }
 

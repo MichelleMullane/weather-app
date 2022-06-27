@@ -1,5 +1,7 @@
 // Display the current time upon loading the page:
-function displayDate(date) {
+function displayDate(timeStamp) {
+  let date = new Date(timeStamp);
+
   let days = [
     "Sunday",
     "Monday",
@@ -7,21 +9,27 @@ function displayDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 
-  let currentDay = days[currentTime.getDay()];
-  let timeDisplay = currentTime.toLocaleString("en-US", {
+  let currentDay = days[date.getDay()];
+  let time = date.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
-    hour12: true
+    hour12: true,
   });
 
-  return `${currentDay}, ${timeDisplay}`;
+  return `${currentDay}, ${time}`;
 }
 
 // Display the weather upon clicking the search button
 function displaySearchWeather(response) {
+  console.log(response);
+  // Display the current day & time
+  document.querySelector("#day-time").innerHTML = displayDate(
+    response.data.dt * 1000
+  );
+
   // Displayed searched city
   document.querySelector("#location").innerHTML = response.data.name;
 
@@ -52,26 +60,8 @@ function displaySearchWeather(response) {
     response.data.wind.speed
   );
 
-  // Set sunrise
-  let sunriseTime = new Date(response.data.sys.sunrise * 1000);
-  let sunriseDisplay = sunriseTime.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true
-  });
-  document.querySelector("#sunrise-time").innerHTML = sunriseDisplay;
-
-  // Set sunset
-  let sunsetTime = new Date(response.data.sys.sunset * 1000);
-  let sunsetDisplay = sunsetTime.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true
-  });
-  document.querySelector("#sunset-time").innerHTML = sunsetDisplay;
-
   // Set weather description
-  let weatherDescription = response.data.weather[0].main;
+  let weatherDescription = response.data.weather[0].description;
   let currentDescriptionElement = document.querySelector(
     "#current-weather-description"
   );
@@ -124,12 +114,6 @@ function displayCelsius(event) {
 
 let selectCelsiusUnits = document.querySelector("#select-celsius");
 selectCelsiusUnits.addEventListener("click", displayCelsius);
-
-// Display the current day & time
-let currentTime = new Date();
-
-let timeHtml = document.querySelector(".current-day-time");
-timeHtml.innerHTML = displayDate(currentTime);
 
 // Display the name of the searched city
 let searchForm = document.querySelector("form");
