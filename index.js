@@ -120,32 +120,6 @@ function findUser() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-// Display the temperature in Celsius
-function displayCelsius(event) {
-  event.preventDefault();
-  // Convert temperature to Celsius:
-  let celsiusTemperature = (fahrenheitTemperature - 32) * (5 / 9);
-  celsiusTemperature = Math.round(celsiusTemperature);
-  // Display temperature in Celsius:
-  document.querySelector("#temp-value").innerHTML = celsiusTemperature;
-  // Toggle the active class between the units links:
-  selectFahrenheitUnits.classList.remove("active");
-  selectCelsiusUnits.classList.add("active");
-}
-
-// Display the temperature in Fahrenheit
-function displayFahrenheit(event) {
-  event.preventDefault();
-  // Display the temperature in Fahrenheit
-  document.querySelector("#temp-value").innerHTML = Math.round(
-    fahrenheitTemperature
-  );
-
-  // Toggle the active class between the units links:
-  selectFahrenheitUnits.classList.add("active");
-  selectCelsiusUnits.classList.remove("active");
-}
-
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -183,14 +157,6 @@ function displayForecast(response) {
 }
 
 let fahrenheitTemperature = null;
-
-// Convert to Celsius when user clicks on link
-let selectCelsiusUnits = document.querySelector("#select-celsius");
-selectCelsiusUnits.addEventListener("click", displayCelsius);
-
-// Convert to Fahrenheit when user clicks on link
-let selectFahrenheitUnits = document.querySelector("#select-fahrenheit");
-selectFahrenheitUnits.addEventListener("click", displayFahrenheit);
 
 // Display the name of the searched city
 let searchForm = document.querySelector("form");
