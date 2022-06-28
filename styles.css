@@ -21,6 +21,10 @@ ul {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .app-wrapper {
   margin: 30px auto;
   max-width: 700px;
@@ -89,9 +93,19 @@ ul {
 }
 
 .units {
-  font-size: 24px;
+  font-size: 18px;
   position: relative;
   top: -32px;
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: black;
 }
 
 .motivation-text {
@@ -115,9 +129,4 @@ ul {
   border: solid #ffc003;
   border-radius: 12px;
   line-height: 25px;
-}
-
-.shift-right {
-  position: relative;
-  left: 0px;
 }

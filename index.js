@@ -24,6 +24,8 @@ function displayDate(timeStamp) {
 
 // Display the weather upon clicking the search button
 function displaySearchWeather(response) {
+  fahrenheitTemperature = response.data.main.temp;
+
   // Display the current day & time
   document.querySelector("#day-time").innerHTML = displayDate(
     response.data.dt * 1000
@@ -104,29 +106,44 @@ function findUser() {
 // Display the temperature in Celsius
 function displayCelsius(event) {
   event.preventDefault();
-
-  let fahrenheitTemp = 82;
-  let celsiusTemp = (fahrenheitTemp - 32) * (5 / 9);
-  celsiusTemp = Math.round(celsiusTemp);
-
-  let tempDisplay = document.querySelector("#temp-value");
-  tempDisplay.innerHTML = celsiusTemp;
-
-  let unitsDisplay = document.querySelector("#units-display");
-  unitsDisplay.innerHTML = "°C";
-
-  let unitsElement = document.querySelector("span#units-display");
-  unitsElement.classList.add("shift-right");
+  // Convert temperature to Celsius:
+  let celsiusTemperature = (fahrenheitTemperature - 32) * (5 / 9);
+  celsiusTemperature = Math.round(celsiusTemperature);
+  // Display temperature in Celsius:
+  document.querySelector("#temp-value").innerHTML = celsiusTemperature;
+  // Toggle the active class between the units links:
+  selectFahrenheitUnits.classList.remove("active");
+  selectCelsiusUnits.classList.add("active");
 }
 
+// Display the temperature in Fahrenheit
+function displayFahrenheit(event) {
+  event.preventDefault();
+  // Display the temperature in Fahrenheit
+  document.querySelector("#temp-value").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
+
+  // Toggle the active class between the units links:
+  selectFahrenheitUnits.classList.add("active");
+  selectCelsiusUnits.classList.remove("active");
+}
+
+let fahrenheitTemperature = null;
+
+// Convert to Celsius when user clicks on link
 let selectCelsiusUnits = document.querySelector("#select-celsius");
 selectCelsiusUnits.addEventListener("click", displayCelsius);
+
+// Convert to Fahrenheit when user clicks on link
+let selectFahrenheitUnits = document.querySelector("#select-fahrenheit");
+selectFahrenheitUnits.addEventListener("click", displayFahrenheit);
 
 // Display the name of the searched city
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", handleSearchButton);
 
-// Display the weather at the user's location & display "Your Location"
+// Display the weather at the user's location & display the user's location
 let currentLocationSearch = document.querySelector("#current-location");
 currentLocationSearch.addEventListener("click", findUser);
 
