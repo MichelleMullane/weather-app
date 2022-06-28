@@ -37,6 +37,69 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+// Display the motivational text
+function displayQuote(weatherCondition) {
+  if (weatherCondition === "Thunderstorm") {
+    return `"When you come out of the storm, you won’t be the same person who walked in. That’s what this storm’s all about." <br /> -Haruki Murakami`;
+  }
+
+  if (weatherCondition === "Drizzle") {
+    return `"And when it rains on your parade, look up rather than down. Without the rain, there would be no rainbow." <br /> -Gilbert K. Chesterton`;
+  }
+
+  if (weatherCondition === "Rain") {
+    return `"The way I see it, if you want the rainbow, you got to put up with the rain." <br /> -Dolly Parton`;
+  }
+
+  if (weatherCondition === "Snow") {
+    return `"Kindness is like snow—it beautifies everything it covers." <br /> -Kahlil Gibran`;
+  }
+
+  if (weatherCondition === "Mist") {
+    return `"As I stood and watched the mists slowly rising this morning I wondered what view was more beautiful than this." <br /> -Hal Borland`;
+  }
+
+  if (weatherCondition === "Smoke") {
+    return `"Love is a smoke made with the fume of sighs." <br /> -William Shakespeare`;
+  }
+
+  if (weatherCondition === "Haze") {
+    return `"Romance is the glamour which turns the dust of everyday life into a golden haze." <br /> -Carolyn Gold Heilbrun`;
+  }
+
+  if (weatherCondition === "Dust") {
+    return `"You may write me down in history with your bitter, twisted lines. You may trod me in the very dirt, but still, like dust, I'll rise." <br /> -Maya Angelou`;
+  }
+
+  if (weatherCondition === "Fog") {
+    return `"I like the muted sounds, the shroud of grey, and the silence that comes with fog." <br /> -Om Malik`;
+  }
+
+  if (weatherCondition === "Sand") {
+    return `"To see a world in a grain of sand and heaven in a wild flower <br />Hold infinity in the palm of your hand and eternity in an hour." <br /> -William Blake`;
+  }
+
+  if (weatherCondition === "Ash") {
+    return `"Our passions are the true phoenixes; when the old one is burnt out, a new one rises from its ashes." <br /> -Johann Wolfgang von Goethe`;
+  }
+
+  if (weatherCondition === "Squall") {
+    return `"The elderly have weathered enough squalls to know that this one, too, shall pass." <br /> -Sarah Ferguson`;
+  }
+
+  if (weatherCondition === "Tornado") {
+    return `"At the heart of the cyclone tearing the sky is a place of central calm." <br /> -Edwin Markham`;
+  }
+
+  if (weatherCondition === "Clear") {
+    return `"Look at the sunny side of everything." <br /> -Christian D. Larson`;
+  }
+
+  if (weatherCondition === "Clouds") {
+    return `"A cloudy day is no match for a sunny disposition." <br /> -William Arthur Ward`;
+  }
+}
+
 // Display the weather upon clicking the search button
 function displaySearchWeather(response) {
   fahrenheitTemperature = response.data.main.temp;
@@ -90,6 +153,11 @@ function displaySearchWeather(response) {
     "#current-weather-description"
   );
   currentDescriptionElement.innerHTML = weatherDescription;
+
+  // Set motivational text
+  document.querySelector("#motivation-text").innerHTML = displayQuote(
+    response.data.weather[0].main
+  );
 
   getForecast(response.data.coord);
 }
@@ -155,8 +223,6 @@ function displayForecast(response) {
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-let fahrenheitTemperature = null;
 
 // Display the name of the searched city
 let searchForm = document.querySelector("form");
