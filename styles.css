@@ -130,3 +130,11 @@ a {
   border-radius: 12px;
   line-height: 25px;
 }
+
+.forecast-high-temp {
+  font-weight: bold;
+}
+
+.forecast-low-temp {
+  opacity: 0.8;
+}

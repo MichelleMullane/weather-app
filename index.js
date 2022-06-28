@@ -22,6 +22,21 @@ function displayDate(timeStamp) {
   return `${currentDay}, ${time}`;
 }
 
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function getForecast(coordinates) {
+  let apiKey = "08010f9a1b70b38b765f2b921b8d7364";
+  let units = "imperial";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // Display the weather upon clicking the search button
 function displaySearchWeather(response) {
   fahrenheitTemperature = response.data.main.temp;
@@ -75,6 +90,8 @@ function displaySearchWeather(response) {
     "#current-weather-description"
   );
   currentDescriptionElement.innerHTML = weatherDescription;
+
+  getForecast(response.data.coord);
 }
 
 // Send API request for default or searched city
@@ -127,6 +144,42 @@ function displayFahrenheit(event) {
   // Toggle the active class between the units links:
   selectFahrenheitUnits.classList.add("active");
   selectCelsiusUnits.classList.remove("active");
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML += `
+                    <div class="col five-day">
+                      <ul>
+                        <li>${formatDay(forecastDay.dt)}</li>
+                        <li>
+                          <img
+                            src="http://openweathermap.org/img/wn/${
+                              forecastDay.weather[0].icon
+                            }@2x.png"
+                            alt="Weather icon"
+                            width="42"
+                        </li>
+                        <li class="forecast-high-temp">H: ${Math.round(
+                          forecastDay.temp.max
+                        )}°F</li>
+                        <li class="forecast-low-temp">L: ${Math.round(
+                          forecastDay.temp.min
+                        )}°F</li>
+                      </ul>
+                    </div>
+`;
+    }
+  });
+
+  forecastHTML += `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let fahrenheitTemperature = null;
