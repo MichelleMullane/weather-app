@@ -74,41 +74,54 @@
               <strong id="location"> ...enter location above </strong>
             </h2>
 
-            <div class="current-day-time">
-              Last updated: <span id="day-time"></span>
-            </div>
+            <ul>
+              <li class="current-day-time">
+                Last updated: <span id="day-time"></span>
+              </li>
+              <li>
+                <span
+                  class="weather-description"
+                  id="current-weather-description"
+                ></span>
+              </li>
+              <li>
+                H: <span id="high-temp-value"> </span>°F | L:
+                <span id="low-temp-value"> </span>°F
+              </li>
+            </ul>
 
             <div class="row current-conditions">
-              <div class="col">
-                <div class="current-temp">
-                  <img src="" id="icon" alt="Current weather icon" />
+              <div class="col-6">
+                <div class="current-temp clearfix">
+                  <img
+                    src=""
+                    id="icon"
+                    alt="Current weather icon"
+                    class="float-start"
+                  />
                   <span class="current-temp-value" id="temp-value"></span
                   ><span class="units" id="units-display">°F</span>
                   <span class="toggle-units"></span>
                   <a href="" id="select-fahrenheit">°F</a> |
                   <a href="" id="select-celsius">°C</a>
                 </div>
-
-                <div class="daily-temp-cloudiness">
-                  <span
-                    class="weather-description"
-                    id="current-weather-description"
-                  ></span>
-                  <br />
-                  H: <span id="high-temp-value"> </span>°F | L:
-                  <span id="low-temp-value"> </span>°F
-                </div>
               </div>
 
-              <div class="col current-stats">
-                <i class="fa-solid fa-droplet"></i>
-                Humidity: <span id="humidity-value"></span>%
-                <br />
-                <i class="fa-solid fa-temperature-half"></i>
-                Feels like: <span id="feels-like-value"></span>°F
-                <br />
-                <i class="fa-solid fa-wind"></i>
-                Wind speed: <span id="wind-speed-value"></span> mph
+              <div class="col-6 current-stats">
+                <ul>
+                  <li>
+                    <i class="fa-solid fa-droplet"></i>
+                    Humidity: <span id="humidity-value"></span>%
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-temperature-half"></i>
+                    Feels like: <span id="feels-like-value"></span>°F
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-wind"></i>
+                    Wind speed: <span id="wind-speed-value"></span> mph
+                  </li>
+                </ul>
               </div>
             </div>
 

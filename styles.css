@@ -16,6 +16,11 @@ strong:hover {
   font-size: 36px;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 .app-wrapper {
   margin: 30px auto;
   max-width: 700px;
@@ -76,9 +81,7 @@ strong:hover {
 
 .current-temp-value {
   font-size: 62px;
-  font-weight: 250;
-  /* line-height: 1; */
-  margin-left: 6px;
+  font-weight: 300;
 }
 
 .weather-description {
