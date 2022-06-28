@@ -24,7 +24,6 @@ function displayDate(timeStamp) {
 
 // Display the weather upon clicking the search button
 function displaySearchWeather(response) {
-  console.log(response);
   // Display the current day & time
   document.querySelector("#day-time").innerHTML = displayDate(
     response.data.dt * 1000
@@ -32,6 +31,14 @@ function displaySearchWeather(response) {
 
   // Displayed searched city
   document.querySelector("#location").innerHTML = response.data.name;
+
+  // Display weather icon
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 
   // Set temperature
   document.querySelector("#temp-value").innerHTML = Math.round(
