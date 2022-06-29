@@ -30,110 +30,98 @@
   <body>
     <div class="container">
       <div class="app-wrapper">
-        <div class="card app-card">
-          <div class="card-body">
-            <h1>Daily Motivation Weather App</h1>
+        <div class="app-background">
+          <h1>Daily Inspiration Weather App</h1>
 
-            <div class="subhead">
-              Getting you in the 🧠mindset🧘‍♀️ to smash your day, no matter the
-              weather.
-            </div>
+          <div class="subhead">
+            Getting you in the 🧠mindset🧘‍♀️ to smash your day, no matter the
+            weather.
+          </div>
 
-            <form>
-              <input
-                type="text"
-                class="form-control search-bar shadow"
-                id="location-input"
-                placeholder="Enter a city name"
-                autocomplete="off"
-                autofocus
-              />
-              <button
-                type="submit"
-                id="search-location"
-                class="btn btn-primary shadow"
-              >
-                ☜ Search City
-              </button>
-            </form>
-            <div class="current-location-search">
-              <span class="current-button-description"
-                >Check out the current weather where you are:</span
-              >
-              <button
-                type="submit"
-                id="current-location"
-                class="btn btn-primary shadow"
-              >
-                ☞ Your Location
-              </button>
-            </div>
+          <form>
+            <input
+              type="text"
+              class="form-control search-bar shadow"
+              id="location-input"
+              placeholder="Enter a city name"
+              autocomplete="off"
+              autofocus
+            />
+            <button type="submit" id="search-location" class="btn shadow">
+              ☜ Search City
+            </button>
+          </form>
+          <div class="current-location-search">
+            <span class="current-button-description"
+              >Check out your current weather:</span
+            >
+            <button type="submit" id="current-location" class="btn shadow">
+              ☞ Your Location
+            </button>
+          </div>
 
-            <h2>
-              Current Weather in
-              <strong id="location"> ...enter location above </strong>
-            </h2>
+          <h2>
+            Current Weather in
+            <strong id="location"> ...enter location above </strong>
+          </h2>
 
-            <ul>
-              <li class="current-day-time">
-                Last updated: <span id="day-time"></span>
-              </li>
-              <li>
-                <span
-                  class="weather-description"
-                  id="current-weather-description"
-                ></span>
-              </li>
-              <li>
+          <div class="current-day-time">
+            Last updated: <span id="day-time"></span>
+          </div>
+
+          <div class="row current-conditions">
+            <div class="col-4 current-weather">
+              <div
+                class="weather-description"
+                id="current-weather-description"
+              ></div>
+
+              <div class="current-temp clearfix">
+                <img
+                  src=""
+                  id="icon"
+                  alt="Current weather icon"
+                  class="weather-icon"
+                />
+                <span class="current-temp-value" id="temp-value"></span
+                ><span class="units">°F</span>
+              </div>
+
+              <div class="high-low-temperatures">
                 H: <span id="high-temp-value"> </span>°F | L:
                 <span id="low-temp-value"> </span>°F
-              </li>
-            </ul>
-
-            <div class="row current-conditions">
-              <div class="col-6">
-                <div class="current-temp clearfix">
-                  <img
-                    src=""
-                    id="icon"
-                    alt="Current weather icon"
-                    class="float-start"
-                  />
-                  <span class="current-temp-value" id="temp-value"></span
-                  ><span class="units">°F</span>
-                </div>
-              </div>
-
-              <div class="col-6 current-stats">
-                <ul>
-                  <li>
-                    <i class="fa-solid fa-droplet"></i>
-                    Humidity: <span id="humidity-value"></span>%
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-temperature-half"></i>
-                    Feels like: <span id="feels-like-value"></span>°F
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-wind"></i>
-                    Wind speed: <span id="wind-speed-value"></span> mph
-                  </li>
-                </ul>
               </div>
             </div>
 
-            <div class="motivation-text">
-              <strong> Today's Mantra☕️: </strong>
-              <div id="motivation-text"></div>
-            </div>
-
-            <div class="card five-day-card">
-              <div class="card-body">
-                <h3>Your 5 Day Forecast</h3>
-
-                <div class="forecast" id="forecast"></div>
+            <div class="col-8">
+              <div class="motivation-text col">
+                <strong> Today's Mantra☕️: </strong>
+                <div id="motivation-text"></div>
               </div>
             </div>
+          </div>
+
+          <div class="row current-stats">
+            <div class="col">
+              <i class="fa-solid fa-droplet"></i>
+              Humidity: <span id="humidity-value"></span>%
+            </div>
+
+            <div class="col">
+              <i class="fa-solid fa-temperature-half"></i>
+              Feels like: <span id="feels-like-value"></span>°F
+            </div>
+
+            <div class="col">
+              <i class="fa-solid fa-wind"></i>
+              Wind speed: <span id="wind-speed-value"></span> mph
+            </div>
+          </div>
+
+          <div class="forecast-wrapper">
+            <h3>Your 5 Day Forecast</h3>
+
+            <div class="forecast" id="forecast"></div>
           </div>
         </div>
 

@@ -1,24 +1,37 @@
 body {
   font-family: "Nunito", sans-serif;
+  text-align: center;
+  background: #33a1ba;
 }
 
-h1 {
-  margin-bottom: 0;
+h1,
+.subhead {
+  margin: 5px auto;
+  color: #ea6e4a;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  width: fit-content;
+  padding: 0 5px;
+  font-weight: bold;
 }
 
 h2 {
-  margin-top: 25px;
+  margin-top: 50px;
   margin-bottom: 0;
 }
 
+strong {
+  transition: 200ms;
+}
+
 strong:hover {
-  color: #fff;
-  font-size: 36px;
+  color: #fceae5;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  font-size: 18px;
 }
 
 a {
@@ -30,9 +43,10 @@ a {
   max-width: 700px;
 }
 
-.app-card {
-  background: linear-gradient(#92b4ec, #ffffff);
-  border: solid #92b4ec;
+.app-background {
+  padding: 10px;
+  background: no-repeat bottom/100% url(images/sky.jpeg);
+  border-radius: 5px;
 }
 
 .five-day-card {
@@ -41,29 +55,25 @@ a {
   --bs-card-spacer-y: 0;
 }
 
-.subhead {
-  opacity: 0.75;
-  padding-bottom: 25px;
-}
-
 .form-control {
+  margin-top: 50px;
   display: inline;
   width: 50%;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .btn {
   vertical-align: 0%;
-  background: #ffe69a;
-  color: #92b4ec;
-  border: solid #ffc003;
+  background: #ea6e4a;
+  color: #fceae5;
+  border: solid #fceae5;
   font-size: 20px;
-  font-weight: bold;
+  transition: 200ms;
 }
 
 .btn:hover {
-  background: #ffc003;
-  border: solid #fff;
+  background: #f1a088;
+  border: solid #ea6e4a;
 }
 
 .current-location-search {
@@ -72,15 +82,20 @@ a {
 
 .current-button-description {
   padding: 10px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .current-day-time {
-  opacity: 0.6;
+  margin-bottom: 50px;
+  font-size: 18px;
 }
 
 .current-conditions {
-  margin-top: 50px;
+  margin-top: 80px;
+}
+
+.weather-icon {
+  float: left;
 }
 
 .current-temp-value {
@@ -90,45 +105,47 @@ a {
 
 .weather-description {
   text-transform: capitalize;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .units {
-  font-size: 18px;
+  font-size: 20px;
   position: relative;
   top: -32px;
 }
 
-.active {
-  color: black;
-  cursor: default;
-}
-
-.active:hover {
-  text-decoration: none;
-  color: black;
+.high-low-temperatures {
+  position: relative;
+  top: -20px;
+  font-size: 18px;
 }
 
 .motivation-text {
-  margin-top: 10px;
-  margin-bottom: 25px;
-  opacity: 0.8;
-  font-size: large;
-  background: rgb(255, 230, 154);
-  border: solid #ffc003;
-  border-radius: 12px;
-  padding: 10px;
+  margin: 0 auto 25px;
+  font-size: 22px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  padding: 5px 20px;
+  text-align: center;
+  max-width: fit-content;
+  color: #ea6e4a;
 }
 
 .current-stats {
   line-height: 40px;
   font-size: 18px;
+  margin-bottom: 80px;
 }
 
-.five-day {
-  text-align: center;
-  border: solid #ffc003;
-  border-radius: 12px;
+.forecast-wrapper {
+  border-radius: 5px;
   line-height: 25px;
+}
+
+.forecast {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
 }
 
 .forecast-high-temp {
